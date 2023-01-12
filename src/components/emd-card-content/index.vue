@@ -11,3 +11,9 @@ export default {
   name: "EmdCardContent",
 };
 </script>
+
+<style scoped>
+.emd-card-content {
+  padding: 1rem;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div :class="['emd-text', styled]">
+  <div :class="['emd-text', computedClass]" :style="computedStyle">
     <slot></slot>
   </div>
 </template>
@@ -24,10 +24,15 @@ export default {
       default: SIZE.section,
       validation: (size) => Object.keys(SIZE).includes(size),
     },
+    color: String,
   },
+
   computed: {
-    styled() {
+    computedClass() {
       return SIZE[this.size];
+    },
+    computedStyle() {
+      return { color: this.color };
     },
   },
 };

@@ -107,7 +107,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .emd-progress-bar {
   width: 0%;
   border-radius: 4px;
@@ -116,7 +116,6 @@ export default {
   align-items: center;
   justify-content: center;
 
-  font-family: "Lato", sans-serif;
   font-size: 0.75rem;
   line-height: 0;
   color: white;

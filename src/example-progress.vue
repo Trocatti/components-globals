@@ -37,10 +37,12 @@
 </template>
 
 <script>
-import EmdProgress from "./emd-progress/index.vue";
-import EmdProgressBar from "./emd-progress-bar/index.vue";
+import EmdProgress from "./components/emd-progress/index.vue";
+import EmdProgressBar from "./components/emd-progress-bar/index.vue";
 
 let interval = undefined;
+
+const INIT_PROGRESS = 60;
 
 export default {
   name: "App",
@@ -51,7 +53,7 @@ export default {
   data() {
     return {
       progress: 0,
-      lowProgress: 0,
+      lowProgress: INIT_PROGRESS,
     };
   },
 
@@ -59,7 +61,7 @@ export default {
     lowProgress(value) {
       if (value >= 100) {
         clearInterval(interval);
-        this.lowProgress = 0;
+        this.lowProgress = INIT_PROGRESS;
       }
     },
   },
